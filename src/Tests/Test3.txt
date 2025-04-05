@@ -1,0 +1,41 @@
+// app.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <div class="container">
+      <!-- Right Pane: List of Products -->
+      <div class="right-pane">
+        <ul>
+          <li *ngFor="let product of products" (click)="selectProduct(product)">
+            <img [src]="product.image" alt="{{ product.name }}" width="100" />
+            <p>{{ product.name }}</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Left Pane: Product Details -->
+      <div class="left-pane" *ngIf="selectedProduct">
+        <h2>{{ selectedProduct.name }}</h2>
+        <img [src]="selectedProduct.image" alt="{{ selectedProduct.name }}" />
+        <p>{{ selectedProduct.details }}</p>
+      </div>
+    </div>
+  `,
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  products = [
+    { id: 1, name: 'المنتج 1', image: 'https://via.placeholder.com/150', details: 'تفاصيل المنتج 1' },
+    { id: 2, name: 'المنتج 2', image: 'https://via.placeholder.com/150', details: 'تفاصيل المنتج 2' },
+    { id: 3, name: 'المنتج 3', image: 'https://via.placeholder.com/150', details: 'تفاصيل المنتج 3' },
+    { id: 4, name: 'المنتج 4', image: 'https://via.placeholder.com/150', details: 'تفاصيل المنتج 4' }
+  ];
+
+  selectedProduct = this.products[0]; // Default to the first product
+
+  selectProduct(product: any): void {
+    this.selectedProduct = product;
+  }
+}

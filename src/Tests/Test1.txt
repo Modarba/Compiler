@@ -1,0 +1,42 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <div class="container">
+      <!-- Left Pane: Product Details -->
+      <div class="left-pane">
+        <h2>{{ selectedProduct.name }}</h2>
+        <img [src]="selectedProduct.image" alt="{{ selectedProduct.name }}" />
+        <p>{{ selectedProduct.details }}</p>
+      </div>
+
+      <!-- Right Pane: List of Products -->
+      <div class="right-pane">
+        <ul>
+          <li *ngFor="let product of products" (click)="selectProduct(product)">
+            <img [src]="product.image" alt="{{ product.name }}" width="100" />
+            <p>{{ product.name }}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  `,
+})
+  // List of products
+export class AppComponent {
+  products = [
+    { id: 1, name: 'Product 1', image: 'https://via.placeholder.com/150', details: 'Details about Product 1' },
+    { id: 2, name: 'Product 2', image: 'https://via.placeholder.com/150', details: 'Details about Product 2' },
+    { id: 3, name: 'Product 3', image: 'https://via.placeholder.com/150', details: 'Details about Product 3' },
+    { id: 4, name: 'Product 4', image: 'https://via.placeholder.com/150', details: 'Details about Product 4' }
+  ];
+
+  // To store selected product details
+  selectedProduct = this.products[0]; // Default to first product
+
+  // Method to handle product click
+  selectProduct(product: any): void {
+    this.selectedProduct = product;
+  }
+}

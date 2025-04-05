@@ -1,0 +1,107 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <div class="catalog-container">
+      <div class="filters">
+        <input
+          type="text"
+          placeholder="Search products..."
+          [(ngModel)]="searchQuery"
+          (input)="filterProducts()"
+        />
+
+        <select [(ngModel)]="selectedCategory" (change)="filterProducts()">
+          <option value="">All Categories</option>
+          <option *ngFor="let category of categories" [value]="category">
+            {{ category }}
+          </option>
+        </select>
+
+        <select [(ngModel)]="sortOrder" (change)="sortProducts()">
+          <option value="">Sort By</option>
+          <option value="name-asc">Name</option>
+          <option value="name-desc">Name </option>
+          <option value="price-asc">Price</option>
+          <option value="price-desc">Price</option>
+        </select>
+      </div>
+
+      <div class="products-grid">
+        <div
+          *ngFor="let product of filteredProducts"
+          class="product-card"
+          (click)="selectProduct(product)"
+        >
+          <img [src]="product.imageUrl" [alt]="product.name" />
+          <h3>{{ product.name }}</h3>
+          <p>${{ product.price }}</p>
+        </div>
+      </div>
+
+      <div class="product-details" *ngIf="selectedProduct">
+        <button (click)="clearSelection()">Close</button>
+        <h2>{{ selectedProduct.name }}</h2>
+        <img [src]="selectedProduct.imageUrl" [alt]="selectedProduct.name" />
+        <p>{{ selectedProduct.description }}</p>
+        <p><strong>Price:</strong> ${{ selectedProduct.price }}</p>
+      </div>
+    </div>
+  `,
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent {
+  products = [
+    {
+      id: 1,
+      name: 'Laptop',
+      category: 'Electronics',
+      price: 1200,
+      imageUrl: 'https://via.placeholder.com/100',
+      description: 'High-performance laptop.',
+    },
+    {
+      id: 2,
+      name: 'Shoes',
+      category: 'Fashion',
+      price: 80,
+      imageUrl: 'https://via.placeholder.com/100',
+      description: 'Comfortable running shoes.',
+    },
+    {
+      id: 3,
+      name: 'Coffee Maker',
+      category: 'Home Appliances',
+      price: 50,
+      imageUrl: 'https://via.placeholder.com/100',
+      description: 'Brews delicious coffee.',
+    },
+    {
+      id: 4,
+      name: 'Headphones',
+      category: 'Electronics',
+      price: 200,
+      imageUrl: 'https://via.placeholder.com/100',
+      description: 'Noise-canceling headphones.',
+    },
+    {
+      id: 5,
+      name: 'T-Shirt',
+      category: 'Fashion',
+      price: 20,
+      imageUrl: 'https://via.placeholder.com/100',
+      description: 'Comfortable cotton T-shirt.',
+    },
+  ];
+
+
+
+  selectProduct(product: any) {
+    this.selectedProduct = product;
+  }
+
+  clearSelection() {
+    this.selectedProduct = null;
+  }
+}
