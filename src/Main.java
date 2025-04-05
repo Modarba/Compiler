@@ -9,12 +9,11 @@ import Antlr.AngularParser;
 import Antlr.AngularLexer;
 public class Main {
     public static void main(String[] args) throws IOException {
-        String source = "C:\\Users\\DELL\\Desktop\\untitled\\src\\Tests\\Test1.txt";
+        String source = "C:\\Users\\Lenovo\\Desktop\\untitled\\src\\Tests\\Test1.txt";
         CharStream cs = CharStreams.fromFileName(source);
         AngularLexer lexer = new AngularLexer(cs);
         CommonTokenStream token = new CommonTokenStream(lexer);
         AngularParser parser = new AngularParser(token);
-
         // Parsing the program
         ParseTree tree = parser.program();
         Program program = (Program) new Visitor().visit(tree);

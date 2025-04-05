@@ -1,4 +1,4 @@
-// Generated from C:/Users/DELL/Desktop/untitled/src/Antlr/AngularParser.g4 by ANTLR 4.13.2
+// Generated from C:/Users/Lenovo/Desktop/untitled/src/Antlr/AngularParser.g4 by ANTLR 4.13.1
 package Antlr;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -388,12 +388,12 @@ public interface AngularParserListener extends ParseTreeListener {
 	 */
 	void exitBlock(AngularParser.BlockContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link AngularParser#singleExpression}.
+	 * Enter a parse tree produced by .
 	 * @param ctx the parse tree
 	 */
 	void enterSingleExpression(AngularParser.SingleExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link AngularParser#singleExpression}.
+	 * Exit a parse tree produced by .
 	 * @param ctx the parse tree
 	 */
 	void exitSingleExpression(AngularParser.SingleExpressionContext ctx);

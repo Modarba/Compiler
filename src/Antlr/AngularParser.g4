@@ -3,7 +3,6 @@ parser grammar AngularParser;
 options {
   tokenVocab = AngularLexer;
 }
-
 program ///////////////////
     : importStatement* topLevelStatement* EOF;
 

@@ -1,4 +1,4 @@
-// Generated from C:/Users/DELL/Desktop/untitled/src/Antlr/AngularParser.g4 by ANTLR 4.13.2
+// Generated from C:/Users/Lenovo/Desktop/untitled/src/Antlr/AngularParser.g4 by ANTLR 4.13.1
 package Antlr;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -239,7 +239,7 @@ public interface AngularParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitBlock(AngularParser.BlockContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link AngularParser#singleExpression}.
+	 * Visit a parse tree produced by .
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */

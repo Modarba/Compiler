@@ -1,4 +1,4 @@
-// Generated from C:/Users/DELL/Desktop/untitled/src/Antlr/AngularParser.g4 by ANTLR 4.13.2
+// Generated from C:/Users/Lenovo/Desktop/untitled/src/Antlr/AngularParser.g4 by ANTLR 4.13.1
 package Antlr;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -6,9 +6,9 @@ import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 import java.util.List;
 
-@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue", "this-escape"})
+@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
 public class AngularParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.13.2", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.13.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =

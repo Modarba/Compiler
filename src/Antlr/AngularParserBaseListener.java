@@ -1,4 +1,4 @@
-// Generated from C:/Users/DELL/Desktop/untitled/src/Antlr/AngularParser.g4 by ANTLR 4.13.2
+// Generated from C:/Users/Lenovo/Desktop/untitled/src/Antlr/AngularParser.g4 by ANTLR 4.13.1
 package Antlr;
 
 import org.antlr.v4.runtime.ParserRuleContext;
