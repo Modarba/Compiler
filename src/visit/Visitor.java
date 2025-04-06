@@ -4,12 +4,12 @@ import Antlr.AngularParserBaseVisitor;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import symbole.Row;
-import symbole.SymbolTable;
+import symbole.SymbolTable1;
 import java.util.ArrayList;
 import java.util.List;
 import Antlr.AngularParser;
 public  class Visitor extends AngularParserBaseVisitor {
-    SymbolTable symbolTable = new SymbolTable();
+    SymbolTable1 symbolTable = new SymbolTable1();
 
     @Override
     public Program visitProgram(AngularParser.ProgramContext ctx) {
